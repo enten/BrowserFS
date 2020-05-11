@@ -321,7 +321,7 @@ export default class EmscriptenFileSystem extends SynchronousFileSystem {
   public writeFileSync(p: string, data: any, encoding: string, flag: FileFlag, mode: number): void {
     try {
       if (encoding) {
-        data = Buffer.from(data, encoding);
+        data = Buffer.from(data, encoding as BufferEncoding);
       }
       const u8 = buffer2Uint8array(data);
       this._FS.writeFile(p, u8, { flags: flag.getFlagString(), encoding: 'binary' });

@@ -7,6 +7,7 @@ import * as path from 'path';
 import Inode from '../generic/inode';
 import PreloadFile from '../generic/preload_file';
 import {emptyBuffer} from '../core/util';
+import {Buffer} from 'buffer';
 /**
  * @hidden
  */

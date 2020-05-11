@@ -5,18 +5,21 @@
 
 import * as buffer from 'buffer';
 import fs from './node_fs';
+import FS from './FS';
 import * as path from 'path';
 import {FileSystemConstructor, FileSystem, BFSOneArgCallback, BFSCallback} from './file_system';
 import EmscriptenFS from '../generic/emscripten_fs';
-import Backends from './backends';
+import * as Backends from './backends';
 import * as BFSUtils from './util';
 import * as Errors from './api_error';
 import setImmediate from '../generic/setImmediate';
 
-if ((<any> process)['initializeTTYs']) {
-  (<any> process)['initializeTTYs']();
-}
 
+// if ((<any> process)['initializeTTYs']) {
+//   (<any> process)['initializeTTYs']();
+// }
+
+const _Backends = {...Backends};
 /**
  * Installs BFSRequire as global `require`, a Node Buffer polyfill as the global `Buffer` variable,
  * and a Node process polyfill as the global `process` variable.
@@ -40,7 +43,7 @@ export function install(obj: any) {
  * @hidden
  */
 export function registerFileSystem(name: string, fs: FileSystemConstructor) {
-  (<any> Backends)[name] = fs;
+  (<any> _Backends)[name] = fs;
 }
 
 /**
@@ -66,7 +69,7 @@ export function BFSRequire(module: string): any {
     case 'bfs_utils':
       return BFSUtils;
     default:
-      return (<any> Backends)[module];
+      return (<any> _Backends)[module];
   }
 }
 
@@ -134,7 +137,7 @@ export function getFileSystem(config: FileSystemConfiguration, cb: BFSCallback<F
   function finish() {
     if (!called) {
       called = true;
-      const fsc = <FileSystemConstructor | undefined> (<any> Backends)[fsName];
+      const fsc = <FileSystemConstructor | undefined> (<any> _Backends)[fsName];
       if (!fsc) {
         cb(new Errors.ApiError(Errors.ErrorCode.EPERM, `File system ${fsName} is not available in BrowserFS.`));
       } else {
@@ -175,4 +178,4 @@ export function getFileSystem(config: FileSystemConfiguration, cb: BFSCallback<F
   }
 }
 
-export {EmscriptenFS, Backends as FileSystem, Errors, setImmediate};
+export {EmscriptenFS, FS, Backends as FileSystem, Errors, setImmediate};

@@ -702,7 +702,7 @@ export class BaseFileSystem {
 
       try {
         if (typeof data === 'string') {
-          data = Buffer.from(data, encoding!);
+          data = Buffer.from(data, encoding! as BufferEncoding);
         }
       } catch (e) {
         return cb(e);
@@ -716,7 +716,7 @@ export class BaseFileSystem {
     const fd = this.openSync(fname, flag, mode);
     try {
       if (typeof data === 'string') {
-        data = Buffer.from(data, encoding!);
+        data = Buffer.from(data, encoding! as BufferEncoding);
       }
       // Write into file.
       fd.writeSync(data, 0, data.length, 0);
@@ -737,7 +737,7 @@ export class BaseFileSystem {
         });
       };
       if (typeof data === 'string') {
-        data = Buffer.from(data, encoding!);
+        data = Buffer.from(data, encoding! as BufferEncoding);
       }
       fd!.write(data, 0, data.length, null, cb);
     });
@@ -746,7 +746,7 @@ export class BaseFileSystem {
     const fd = this.openSync(fname, flag, mode);
     try {
       if (typeof data === 'string') {
-        data = Buffer.from(data, encoding!);
+        data = Buffer.from(data, encoding! as BufferEncoding);
       }
       fd.writeSync(data, 0, data.length, null);
     } finally {
