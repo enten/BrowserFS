@@ -3,7 +3,7 @@ import {ApiError, ErrorCode} from '../core/api_error';
 import {default as Stats, FileType} from '../core/node_fs_stats';
 import {File} from '../core/file';
 import {FileFlag} from '../core/file_flag';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import Inode from '../generic/inode';
 import PreloadFile from '../generic/preload_file';
 import {emptyBuffer} from '../core/util';

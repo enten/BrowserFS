@@ -2,7 +2,7 @@ import {FileSystem, BaseFileSystem, BFSOneArgCallback, BFSCallback, FileSystemOp
 import InMemoryFileSystem from './InMemory';
 import {ApiError, ErrorCode} from '../core/api_error';
 import fs from '../core/node_fs';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import {mkdirpSync} from '../core/util';
 
 /**

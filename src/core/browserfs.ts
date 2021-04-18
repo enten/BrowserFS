@@ -6,7 +6,7 @@
 import * as buffer from 'buffer';
 import fs from './node_fs';
 import FS from './FS';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import {FileSystemConstructor, FileSystem, BFSOneArgCallback, BFSCallback} from './file_system';
 import EmscriptenFS from '../generic/emscripten_fs';
 import * as Backends from './backends';

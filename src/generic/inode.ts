@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {default as Stats, FileType} from '../core/node_fs_stats';
 
 /**

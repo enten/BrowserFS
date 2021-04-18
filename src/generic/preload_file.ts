@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {BaseFile, File} from '../core/file';
 import {FileSystem, BFSOneArgCallback, BFSCallback, BFSThreeArgCallback} from '../core/file_system';
 import Stats from '../core/node_fs_stats';

@@ -1,10 +1,12 @@
+import { Buffer } from 'buffer';
+
 import PreloadFile from '../generic/preload_file';
 import {BaseFileSystem, FileSystem as IFileSystem, BFSOneArgCallback, BFSCallback, FileSystemOptions} from '../core/file_system';
 import {ApiError, ErrorCode} from '../core/api_error';
 import {FileFlag, ActionType} from '../core/file_flag';
 import {default as Stats, FileType} from '../core/node_fs_stats';
 import {File as IFile} from '../core/file';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import global from '../core/global';
 import {each as asyncEach} from 'async';
 import {buffer2ArrayBuffer, arrayBuffer2Buffer} from '../core/util';

@@ -1,8 +1,10 @@
+import { Buffer } from 'buffer';
+
 import {File} from './file';
 import {ApiError, ErrorCode} from './api_error';
 import {FileSystem, BFSOneArgCallback, BFSCallback, BFSThreeArgCallback} from './file_system';
 import {FileFlag} from './file_flag';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import Stats from './node_fs_stats';
 import setImmediate from '../generic/setImmediate';
 

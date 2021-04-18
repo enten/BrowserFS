@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {BFSCallback, FileSystemOptions} from '../core/file_system';
 import {SyncKeyValueStore, SimpleSyncStore, SimpleSyncRWTransaction, SyncKeyValueRWTransaction, SyncKeyValueFileSystem} from '../generic/key_value_filesystem';
 

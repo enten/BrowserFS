@@ -4,11 +4,11 @@ import {checkOptions} from './util';
 import {default as AsyncMirror, AsyncMirrorOptions} from '../backend/AsyncMirror';
 // import Dropbox from '../backend/Dropbox';
 import {default as Emscripten, EmscriptenFileSystemOptions} from '../backend/Emscripten';
-// import FolderAdapter from '../backend/FolderAdapter';
+import {default as FolderAdapter, FolderAdapterOptions} from '../backend/FolderAdapter';
 // import HTML5FS from '../backend/HTML5FS';
 import InMemory from '../backend/InMemory';
 import {default as IndexedDB, IndexedDBFileSystemOptions} from '../backend/IndexedDB';
-// import LocalStorage from '../backend/LocalStorage';
+import {default as LocalStorage} from '../backend/LocalStorage';
 import {default as MountableFileSystem, MountableFileSystemOptions} from '../backend/MountableFileSystem';
 // import OverlayFS from '../backend/OverlayFS';
 // import WorkerFS from '../backend/WorkerFS';
@@ -53,9 +53,12 @@ export {
   AsyncMirrorOptions,
   Emscripten,
   EmscriptenFileSystemOptions,
+  FolderAdapter,
+  FolderAdapterOptions,
   InMemory,
   IndexedDB,
   IndexedDBFileSystemOptions,
+  LocalStorage,
   MountableFileSystem,
   MountableFileSystemOptions,
 };

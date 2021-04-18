@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {BaseFileSystem, FileSystem, BFSOneArgCallback, BFSCallback, FileSystemOptions} from '../core/file_system';
 import {ApiError, ErrorCode} from '../core/api_error';
 import {FileFlag} from '../core/file_flag';

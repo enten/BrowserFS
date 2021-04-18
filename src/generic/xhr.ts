@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 /**
  * Contains utility methods for performing a variety of tasks with
  * XmlHttpRequest across browsers.

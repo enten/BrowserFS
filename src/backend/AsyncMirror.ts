@@ -1,10 +1,12 @@
+import { Buffer } from 'buffer';
+
 import {FileSystem, SynchronousFileSystem, BFSOneArgCallback, BFSCallback, FileSystemOptions} from '../core/file_system';
 import {ApiError, ErrorCode} from '../core/api_error';
 import {FileFlag} from '../core/file_flag';
 import {File} from '../core/file';
 import Stats from '../core/node_fs_stats';
 import PreloadFile from '../generic/preload_file';
-import * as path from 'path';
+import * as path from 'bfs-path';
 
 /**
  * @hidden

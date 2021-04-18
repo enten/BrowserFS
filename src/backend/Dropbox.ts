@@ -7,7 +7,7 @@
 // import {arrayBuffer2Buffer, buffer2ArrayBuffer} from '../core/util';
 // import {Dropbox} from 'dropbox_bridge';
 // import setImmediate from '../generic/setImmediate';
-// import {dirname} from 'path';
+// import {dirname} from 'bfs-path';
 // type DropboxClient = DropboxTypes.Dropbox;
 
 // /**

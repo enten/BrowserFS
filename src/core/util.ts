@@ -1,10 +1,12 @@
+import { Buffer } from 'buffer';
+
 /**
  * Grab bag of utility functions used across the code.
  */
 import {FileSystem, BFSOneArgCallback, FileSystemConstructor} from './file_system';
 import {ErrorCode, ApiError} from './api_error';
 import levenshtein from './levenshtein';
-import * as path from 'path';
+import * as path from 'bfs-path';
 
 export function deprecationMessage(print: boolean, fsName: string, opts: any): void {
   if (print) {

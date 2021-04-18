@@ -1,5 +1,5 @@
 import {BaseFileSystem, FileSystem, BFSCallback, FileSystemOptions} from '../core/file_system';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import {ApiError} from '../core/api_error';
 
 /**

@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {SynchronousFileSystem, BFSOneArgCallback, BFSCallback, BFSThreeArgCallback, FileSystemOptions} from '../core/file_system';
 import {default as Stats, FileType} from '../core/node_fs_stats';
 import {FileFlag} from '../core/file_flag';
@@ -309,7 +311,7 @@ export default class EmscriptenFileSystem extends SynchronousFileSystem {
       const data: Uint8Array = this._FS.readFile(p, { flags: flag.getFlagString() });
       const buff = uint8Array2Buffer(data);
       if (encoding) {
-        return buff.toString(encoding);
+        return buff.toString(encoding as BufferEncoding);
       } else {
         return buff;
       }

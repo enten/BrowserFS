@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import Mutex from './mutex';
 import {FileSystem, BFSOneArgCallback, BFSCallback} from '../core/file_system';
 import {ApiError} from '../core/api_error';

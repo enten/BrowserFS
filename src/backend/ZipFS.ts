@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {ApiError, ErrorCode} from '../core/api_error';
 import {default as Stats, FileType} from '../core/node_fs_stats';
 import {SynchronousFileSystem, FileSystem, BFSCallback, FileSystemOptions} from '../core/file_system';

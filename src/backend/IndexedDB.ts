@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {BFSOneArgCallback, BFSCallback, FileSystemOptions} from '../core/file_system';
 import {AsyncKeyValueROTransaction, AsyncKeyValueRWTransaction, AsyncKeyValueStore, AsyncKeyValueFileSystem} from '../generic/key_value_filesystem';
 import {ApiError, ErrorCode} from '../core/api_error';

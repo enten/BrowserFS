@@ -1,5 +1,5 @@
 import {default as Stats, FileType} from '../core/node_fs_stats';
-import * as path from 'path';
+import * as path from 'bfs-path';
 
 /**
  * A simple class for storing a filesystem index. Assumes that all paths passed

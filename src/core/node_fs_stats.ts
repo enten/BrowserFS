@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import * as fs from 'fs';
 
 /**

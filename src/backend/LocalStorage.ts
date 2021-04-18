@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {BFSCallback, FileSystemOptions} from '../core/file_system';
 import {SyncKeyValueStore, SimpleSyncStore, SyncKeyValueFileSystem, SimpleSyncRWTransaction, SyncKeyValueRWTransaction} from '../generic/key_value_filesystem';
 import {ApiError, ErrorCode} from '../core/api_error';
@@ -61,7 +63,7 @@ export class LocalStorageStore implements SyncKeyValueStore, SimpleSyncStore {
         // Don't want to overwrite the key!
         return false;
       }
-      global.localStorage.setItem(key, data.toString(binaryEncoding));
+      global.localStorage.setItem(key, data.toString(binaryEncoding as BufferEncoding));
       return true;
     } catch (e) {
       throw new ApiError(ErrorCode.ENOSPC, "LocalStorage is full.");

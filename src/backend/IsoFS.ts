@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 import {ApiError, ErrorCode} from '../core/api_error';
 import {default as Stats, FileType} from '../core/node_fs_stats';
 import {SynchronousFileSystem, FileSystem, BFSCallback, FileSystemOptions} from '../core/file_system';
@@ -5,7 +7,7 @@ import {File} from '../core/file';
 import {FileFlag, ActionType} from '../core/file_flag';
 import {NoSyncFile} from '../generic/preload_file';
 import {copyingSlice, bufferValidator} from '../core/util';
-import * as path from 'path';
+import * as path from 'bfs-path';
 
 /**
  * @hidden

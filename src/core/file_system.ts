@@ -1,8 +1,10 @@
+import { Buffer } from 'buffer';
+
 import {ApiError, ErrorCode} from './api_error';
 import Stats from './node_fs_stats';
 import {File} from './file';
 import {FileFlag, ActionType} from './file_flag';
-import * as path from 'path';
+import * as path from 'bfs-path';
 import {fail} from './util';
 
 export type BFSOneArgCallback = (e?: ApiError | null) => any;
@@ -661,7 +663,7 @@ export class BaseFileSystem {
             return cb(err, buf);
           }
           try {
-            cb(null, buf.toString(encoding));
+            cb(null, buf.toString(encoding as BufferEncoding));
           } catch (e) {
             cb(e);
           }
@@ -681,7 +683,7 @@ export class BaseFileSystem {
       if (encoding === null) {
         return buf;
       }
-      return buf.toString(encoding);
+      return buf.toString(encoding as BufferEncoding);
     } finally {
       fd.closeSync();
     }
